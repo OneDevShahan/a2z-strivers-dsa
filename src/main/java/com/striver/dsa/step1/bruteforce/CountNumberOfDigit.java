@@ -1,4 +1,4 @@
-package com.striver.dsa.step1;
+package com.striver.dsa.step1.bruteforce;
 
 public class CountNumberOfDigit {
 
