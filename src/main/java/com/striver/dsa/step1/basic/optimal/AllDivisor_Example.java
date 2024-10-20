@@ -1,4 +1,4 @@
-package com.striver.dsa.step1.optimal;
+package com.striver.dsa.step1.basic.optimal;
 
 import java.util.ArrayList;
 import java.util.Collections;

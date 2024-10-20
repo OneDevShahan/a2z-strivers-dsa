@@ -1,4 +1,4 @@
-package com.striver.dsa.step1.optimal;
+package com.striver.dsa.step1.basic.optimal;
 
 public class ArmstringNumber_Example {
     public static void main(String[] args) {

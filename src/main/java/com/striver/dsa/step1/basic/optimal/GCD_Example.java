@@ -1,4 +1,4 @@
-package com.striver.dsa.step1.better;
+package com.striver.dsa.step1.basic.optimal;
 
 public class GCD_Example {
     public static void main(String[] args) {
@@ -8,11 +8,16 @@ public class GCD_Example {
     }
 
     public static int findGCD(int start, int end) {
-        for (int i = Math.min(start, end); i >= 0; i--) {
-            if (start % i == 0 && end % i == 0) {
-                return i;
+        while (start > 0 && end > 0) {
+            if (start > end) {
+                start = start % end;
+            } else {
+                end = end % start;
             }
         }
-        return 1;
+        if (start == 0) {
+            return end;
+        }
+        return start;
     }
 }

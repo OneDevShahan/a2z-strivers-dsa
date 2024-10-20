@@ -1,4 +1,4 @@
-package com.striver.dsa.step1.bruteforce;
+package com.striver.dsa.step1.basic.bruteforce;
 
 import java.util.Arrays;
 

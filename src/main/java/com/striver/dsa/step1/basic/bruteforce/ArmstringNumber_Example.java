@@ -1,4 +1,4 @@
-package com.striver.dsa.step1.bruteforce;
+package com.striver.dsa.step1.basic.bruteforce;
 
 public class ArmstringNumber_Example {
     public static void main(String[] args) {
