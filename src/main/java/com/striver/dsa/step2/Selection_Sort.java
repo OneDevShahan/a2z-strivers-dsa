@@ -1,13 +1,14 @@
-package com.striver.dsa.step1;
+package com.striver.dsa.step2;
 
-public class BasicStructure {
+public class Selection_Sort {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-
+        int[] array = {2, 41, 2, 9, 1, 5, 2, 9};
+        selectionSorting(array);
         System.out.println("Total time taken to execute : " + (System.currentTimeMillis() - startTime) + "ms");
     }
 
-    public static void methodName(String methodName){
+    public static void selectionSorting(int[] array) {
         return;
     }
 }
