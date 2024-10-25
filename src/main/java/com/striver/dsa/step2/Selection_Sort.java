@@ -13,10 +13,10 @@ public class Selection_Sort {
     }
 
     public static void selectionSorting(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i <= array.length - 2; i++) {
             int min = i;
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[j] < array[i]) {
+            for (int j = i; j <= array.length - 1; j++) {
+                if (array[j] < array[min]) {
                     min = j;
                 }
             }
