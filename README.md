@@ -20,10 +20,16 @@ Each problem follows the format below:
    Solutions are divided into Brute Force, Better, and Optimal categories. Not all categories are present for each
    problem if a simpler solution is unavailable.
 
-4. **Code**  
+4. **YouTube Video Link**  
+   YouTube video link of Strivers.
+
+5. **GitHub Code Link**  
+   GitHub code link for my repo.
+
+6. **Code**  
    Solution code snippets for each approach.
 
-5. **Output**  
+7. **Output**  
    Expected or sample output from the code.
 
 ---
