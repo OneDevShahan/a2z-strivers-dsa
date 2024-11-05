@@ -1245,6 +1245,371 @@ Total time taken : 9ms
 
 ---
 
+### Problem 8: Print from 1 to N using Recursion
+
+#### Problem Statement
+
+> **Description:**  
+> Print from 1 to N using Recursion
+
+#### Solution Approaches
+
+#### 1. Traditional Solution
+
+- **Approach:** We'll directly print the number with either `while` or `for` loops.
+
+- **Steps to Solve:**
+    - Step 1: `Use for loop till the number it has to print.`
+
+- **Time Complexity:** `O(N)` where `N` is the input number. The algorithm iterates through each number from `1` to `n`
+  performing constant-time operation for each iteration.
+
+- **Space Complexity :** `O(1)` as the space used by the algorithm does not increase with the size of the input.
+
+> **YouTube Video Link:** [Print from 1 to N using Recursion](https://youtu.be/un6PLygfXrA)
+
+> **GitHub Code Link:**
+> [Print from 1 to N using Recursion](https://github.com/OneDevShahan/a2z-strivers-dsa/blob/master/src/main/java/com/striver/dsa/step1_basic/recursion/NToOne_Traditional.java)
+
+**Java Code:**
+
+```java
+public class OneToN_Traditional {
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        printOneToN(12);
+        System.out.println();
+        System.out.println("Total time taken to execute : " + (System.currentTimeMillis() - startTime) + "ms");
+    }
+
+    public static void printOneToN(int n) {
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+```
+
+**Input:**
+
+```
+ N: 12
+```
+
+**Output:**
+
+```
+1 2 3 4 5 6 7 8 9 10 11 12 
+Total time taken to execute : 10ms
+```
+
+---
+
+#### 2. Recursive Solution
+
+- **Approach:** We first create the base condition for the function where the value of `N` is less than `1` and then
+  make the function call for printing `(n-1)` integers and after this we print `N`. But, we know that this will go on
+  forever if it's not decreasing continuously after every function call. So, to avoid this we put a base condition that
+  if N less than 1, then simply terminate the current recursive call and return to the previous call.
+
+  In this way, all the integers from 1 to N would get printed and as soon as N becomes less than 1, the function call
+  terminates.
+
+- **Steps to Solve:**
+    - Step 1: `Make base condtion to avoid indefinite function call.`
+    - Step 2: `Call the function itself with value of N-1.`
+    - Step 3: `Print the value N as it returns.`
+
+- **Time Complexity:** `O(N)` Since the function is being called `n` times, and for each function, we have only one
+  printable line that takes `O(1)` time, so the cumulative time complexity would be `O(N)`.
+
+- **Space Complexity :** `O(N)` In the worst case, the recursion stack space would be full of all the function calls
+  waiting to get completed and that would make it an `O(N)` recursion stack space.
+
+> **YouTube Video Link:** [Print from 1 to N using Recursion](https://youtu.be/un6PLygfXrA)
+
+> **GitHub Code Link:**
+> [Print from 1 to N using Recursion](https://github.com/OneDevShahan/a2z-strivers-dsa/blob/master/src/main/java/com/striver/dsa/step1_basic/recursion/NToOne_Recursive.java)
+
+**Java Code:**
+
+```java
+public class OneToN_Recursive {
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        printOneToN(12);
+        System.out.println();
+        System.out.println("Total time taken to execute : " + (System.currentTimeMillis() - startTime) + "ms");
+    }
+
+    public static void printOneToN(int n) {
+        if (n > 1) {
+            printOneToN(n - 1);
+        }
+        System.out.print(n + " ");
+    }
+}
+```
+
+**Input:**
+
+```
+ N: 12
+```
+
+**Output:**
+
+```
+1 2 3 4 5 6 7 8 9 10 11 12 
+Total time taken to execute : 16ms
+```
+
+---
+
+### Problem 9: Print from N to 1 using Recursion
+
+#### Problem Statement
+
+> **Description:**  
+> Print from N to 1 using Recursion
+
+#### Solution Approaches
+
+#### 1. Traditional Solution
+
+- **Approach:** We'll directly print the number with either `while` or `for` loops.
+
+- **Steps to Solve:**
+    - Step 1: `Use for loop from the number till 1 and print them.`
+
+- **Time Complexity:** `O(N)` where `N` is the input number. The algorithm iterates through each number from `n` till
+  `1`
+  performing constant-time operation for each iteration.
+
+- **Space Complexity :** `O(1)` as the space used by the algorithm does not increase with the size of the input.
+
+> **YouTube Video Link:** [Print from N to 1 using Recursion](https://youtu.be/un6PLygfXrA)
+
+> **GitHub Code Link:**
+> [Print from N to 1 using Recursion](https://github.com/OneDevShahan/a2z-strivers-dsa/blob/master/src/main/java/com/striver/dsa/step1_basic/recursion/NToOne_Traditional.java)
+
+**Java Code:**
+
+```java
+public class NToOne_Traditional {
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        printNToOne(12);
+        System.out.println();
+        System.out.println("Total time taken to execute : " + (System.currentTimeMillis() - startTime) + "ms");
+    }
+
+    public static void printNToOne(int n) {
+        for (int i = n; i >= 1; i--) {
+            System.out.print(i + " ");
+        }
+    }
+}
+```
+
+**Input:**
+
+```
+ N: 12
+```
+
+**Output:**
+
+```
+12 11 10 9 8 7 6 5 4 3 2 1 
+Total time taken to execute : 9ms
+```
+
+---
+
+#### 2. Recursive Solution
+
+- **Approach:** We first the value of `N` and to avoid indefinite call we put a base condition that if N greater than 1,
+  then simply recursive call with `N-1`.
+
+- **Steps to Solve:**
+    - Step 1: `Print the value N.`
+    - Step 2: `Make base condtion to avoid indefinite function call.`
+    - Step 3: `Call the function itself with value of N-1.`
+
+- **Time Complexity:** `O(N)` Since the function is being called `n` times, and for each function, we have only one
+  printable line that takes `O(1)` time, so the cumulative time complexity would be `O(N)`.
+
+- **Space Complexity :** `O(N)` In the worst case, the recursion stack space would be full of all the function calls
+  waiting to get completed and that would make it an `O(N)` recursion stack space.
+
+> **YouTube Video Link:** [Print from N to 1 using Recursion](https://youtu.be/un6PLygfXrA)
+
+> **GitHub Code Link:**
+> [Print from N to 1 using Recursion](https://github.com/OneDevShahan/a2z-strivers-dsa/blob/master/src/main/java/com/striver/dsa/step1_basic/recursion/NToOne_Recursive.java)
+
+**Java Code:**
+
+```java
+public class NToOne_Recursive {
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        printNToOne(12);
+        System.out.println();
+        System.out.println("Total time taken to execute : " + (System.currentTimeMillis() - startTime) + "ms");
+    }
+
+    public static void printNToOne(int n) {
+        System.out.print(n + " ");
+        if (n > 1) {
+            printNToOne(n - 1);
+        }
+    }
+}
+```
+
+**Input:**
+
+```
+ N: 12
+```
+
+**Output:**
+
+```
+1 2 3 4 5 6 7 8 9 10 11 12 
+Total time taken to execute : 11ms
+```
+
+---
+
+### Problem 10: Sum of first N Natural Numbers
+
+#### Problem Statement
+
+> **Description:**  
+> Given a number ‘N’, find out the sum of the first N natural numbers.
+
+#### Solution Approaches
+
+#### 1. Using Loop
+
+- **Approach:** We can simply add numbers one by one from `1` to `N`. For e.g. if `N = 5`, we can add `1+2+3+4+5=15`. We
+  can use a for loop or while loop to achieve the goal.
+
+- **Steps to Solve:**
+    - Step 1: `Take a variable sum and initialize it as 0.`
+    - Step 2: `Take a for loop and run from 1 to N.`
+    - Step 3: `Save the result in sum.`
+
+- **Time Complexity:** `O(N)` where `N` is the input number. The algorithm iterates through each number from `n` till
+  `1` performing constant-time operation for each iteration.
+
+- **Space Complexity :** `O(1)` as the space used by the algorithm does not increase with the size of the input.
+
+> **YouTube Video Link:** [Sum of first N Natural Numbers](https://youtu.be/69ZCDFy-OUo)
+
+> **GitHub Code Link:**
+> [Sum of first N Natural Numbers](https://github.com/OneDevShahan/a2z-strivers-dsa/blob/master/src/main/java/com/striver/dsa/step1_basic/recursion/SumOfNNumbers_Traditional.java)
+
+**Java Code:**
+
+```java
+public class SumOfNNumbers_Traditional {
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        System.out.println("Sum of first N numbers : " + sumOfFirstNNumbers(5));
+        System.out.println();
+        System.out.println("Total time taken to execute : " + (System.currentTimeMillis() - startTime) + "ms");
+    }
+
+    public static int sumOfFirstNNumbers(int n) {
+        int sum = 0;
+        if (n == 0) {
+            return 0;
+        }
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+}
+```
+
+**Input:**
+
+```
+ N: 5
+```
+
+**Output:**
+
+```
+Sum of first N numbers : 15
+Total time taken to execute : 10ms
+```
+
+---
+
+#### 2. Recursive Solution
+
+- **Approach:** The Sum of `N` natural numbers would just be the `Nth` integer added to the Sum of `(N-1)` natural
+  numbers. The base case can be visualized as if `n` decreases to `0`, then we return `0` because the sum of `0` natural
+  numbers is `0` only. Here, we’ve just broken the problem into `2` sub parts and the answers of both these sub parts
+  would be added and stored in the `sumOfFirstNNumbers(n)` function which would then be printed at last.
+
+- **Steps to Solve:**
+    - Step 1: `Make base condtion to avoid indefinite call by checking N = 0.`
+    - Step 2: `Keep on calling sumOfFirstNNumbers(N-1) and keep adding N to the result`
+    - Step 3: `return the step 2.`
+
+- **Time Complexity:** `O(N)` Since the function is being called n times, and for each function, we have only one
+  printable line that takes `O(1)` time, so the cumulative time complexity would be `O(N)`.
+
+- **Space Complexity :** `O(N)` In the worst case, the recursion stack space would be full of all the function calls
+  waiting to get completed and that would make it an `O(N)` recursion stack space.
+
+> **YouTube Video Link:** [Sum of first N Natural Numbers](https://youtu.be/69ZCDFy-OUo)
+
+> **GitHub Code Link:**
+> [Sum of first N Natural Numbers](https://github.com/OneDevShahan/a2z-strivers-dsa/blob/master/src/main/java/com/striver/dsa/step1_basic/recursion/SumOfNNumbers_Recursive.java)
+
+**Java Code:**
+
+```java
+public class SumOfNNumbers_Recursive {
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        System.out.println("Sum of first N numbers : " + sumOfFirstNNumbers(5));
+        System.out.println();
+        System.out.println("Total time taken to execute : " + (System.currentTimeMillis() - startTime) + "ms");
+    }
+
+    public static int sumOfFirstNNumbers(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return n + sumOfFirstNNumbers(n - 1);
+    }
+}
+```
+
+**Input:**
+
+```
+ N: 5
+```
+
+**Output:**
+
+```
+Sum of first N numbers : 15
+Total time taken to execute : 15ms
+```
+
+---
+
 ## Array Problems
 
 ### Problem 1: Find Maximum Sub array Sum

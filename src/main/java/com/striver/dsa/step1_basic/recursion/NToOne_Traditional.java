@@ -9,9 +9,8 @@ public class NToOne_Traditional {
     }
 
     public static void printNToOne(int n) {
-        System.out.print(n + " ");
-        if (n > 1) {
-            printNToOne(n - 1);
+        for (int i = n; i >= 1; i--) {
+            System.out.print(i + " ");
         }
     }
 }
